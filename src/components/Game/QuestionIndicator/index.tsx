@@ -17,6 +17,7 @@ const QuestionIndicator = ({ currentRound, questionNumber }: Props) => {
           const isCurrentQuestion = ((actualIndex - 1) === questionNumber)
           return (
             <span
+              key={index}
               style={{ marginLeft: `${10 * actualIndex}px` }}
               className={`${isCurrentQuestion ? "text-yellow-500" : ""}`}
             >
