@@ -1,0 +1,40 @@
+.QuestionSlot {
+  display: grid;
+  grid-template-columns: 31px 1fr 31px;
+  
+  p {
+    @apply block border-y-2 border-white p-4 text-start font-medium;
+    position: relative;
+    z-index: 1;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
+    // $border-width: 20px;
+    // clip-path: polygon($border-width 0%, calc(100% - $border-width) 0%, 100% 50%, calc(100% - $border-width) 100%, $border-width 100%, 0% 50%);
+  }
+  
+  &__left {
+    @apply border-t-2 border-l-2 border-white;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    align-self: center;
+    transform: rotateZ(-45deg);
+    position: relative;
+    left: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
+  }
+  
+  &__right {
+    @apply border-t-2 border-l-2 border-white;
+    position: relative;
+    width: 42px;
+    height: 42px;
+    align-self: center;
+    transform: rotateZ(135deg);
+    position: relative;
+    right: 20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(-135deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
+  }
+}

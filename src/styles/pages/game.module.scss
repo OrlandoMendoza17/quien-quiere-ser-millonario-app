@@ -1,0 +1,72 @@
+.Game {
+  @apply text-white p-4;
+  
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/background.jpg");
+  
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  
+  &__logo {
+    width: 350px;
+    height: 350px;
+  }
+  
+  hr {
+    @apply border-t-2 border-white
+  }
+  
+  $width: 900px;
+  $gap: 40px;
+  $slotWidth: calc((900px - 40px) / 2);
+  
+  &__question {
+    @apply pb-4;
+    display: grid;
+    grid-template-columns: minmax($gap, auto) minmax(auto, $width) minmax($gap, auto);
+    align-items: center;
+  }
+  
+  &__answers {
+    @apply py-4;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: minmax($gap, 1fr) minmax(200px, $slotWidth) minmax($gap, auto) minmax(200px, $slotWidth) minmax($gap, 1fr);
+    align-items: center;
+  }
+  
+  &__questionSlot {
+    display: grid;
+    grid-template-columns: 31px 1fr 31px;
+    p {
+      @apply border-y-2 border-white p-4;
+    }
+    &__left {
+      @apply border-t-2 border-l-2 border-white;
+      position: relative;
+      width: 42px;
+      height: 42px;
+      align-self: center;
+      transform: rotateZ(-45deg);
+      position: relative;
+      left: 10px;
+    }
+    &__right {
+      @apply border-t-2 border-l-2 border-white;
+      position: relative;
+      width: 42px;
+      height: 42px;
+      align-self: center;
+      transform: rotateZ(135deg);
+      position: relative;
+      right: 20px;
+    }
+  }
+  
+  &__continue {
+    @apply bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded;
+  }
+}

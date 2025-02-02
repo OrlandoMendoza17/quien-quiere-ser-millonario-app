@@ -1,0 +1,8 @@
+.QuestionIndicator {
+  @apply pr-16;
+  justify-self: end;
+  span {
+    @apply font-medium;
+    display: block;
+  }
+}
