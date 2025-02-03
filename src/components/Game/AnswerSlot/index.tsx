@@ -63,7 +63,7 @@ const AnswerSlot = (props: Props) => {
     >
       <div className={styles.AnswerSlot__left}></div>
       <span>
-        <span className="text-yellow-500">{type[index]}:</span> {answer.label}
+        <span>{type[index]}:</span> {answer.label}
       </span>
       <div className={styles.AnswerSlot__right}></div>
     </button>

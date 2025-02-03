@@ -3,22 +3,25 @@
   grid-template-columns: 31px 1fr 31px;
 
   &:hover {
+
     span,
     .AnswerSlot__left,
     .AnswerSlot__right {
       background: #0b0a2a;
     }
   }
-  
+
   &.selected {
+
     span,
     .AnswerSlot__left,
     .AnswerSlot__right {
       background: #c37d12;
     }
   }
-  
+
   &.correct {
+
     span,
     .AnswerSlot__left,
     .AnswerSlot__right {
@@ -26,13 +29,19 @@
     }
   }
 
-  & > span {
+  &>span {
     @apply block border-y-2 border-white p-4 text-start font-medium;
     position: relative;
     z-index: 1;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
-    
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(10, 52, 107, 1) 25%, rgba(15, 82, 147, 1) 50%, rgba(10, 52, 107, 1) 75%, rgba(2, 0, 36, 1) 100%);
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+    span {
+      @apply text-yellow-500;
+    }
+
     &::before {
       content: " ";
       display: block;
@@ -57,8 +66,8 @@
     left: 10px;
     // background: rgb(2,0,36);
     // background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(10, 52, 107, 1) 25%, rgba(15, 82, 147, 1) 50%, rgba(10, 52, 107, 1) 75%, rgba(2, 0, 36, 1) 100%);
   }
 
   &__right {
@@ -70,7 +79,72 @@
     transform: rotateZ(135deg);
     position: relative;
     right: 20px;
-    background: rgb(2,0,36);
-    background: linear-gradient(-135deg, rgba(2,0,36,1) 0%, rgba(10,52,107,1) 25%, rgba(15,82,147,1) 50%, rgba(10,52,107,1) 75%, rgba(2,0,36,1) 100%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(-135deg, rgba(2, 0, 36, 1) 0%, rgba(10, 52, 107, 1) 25%, rgba(15, 82, 147, 1) 50%, rgba(10, 52, 107, 1) 75%, rgba(2, 0, 36, 1) 100%);
+  }
+
+  &:first-of-type > span {
+    animation-name: questionAppear1;
+    animation-duration: 2s;
+  }
+
+  &:nth-of-type(2) > span {
+    animation-name: questionAppear2;
+    animation-duration: 4s;
+  }
+
+  &:nth-of-type(3) > span {
+    animation-name: questionAppear3;
+    animation-duration: 6s;
+  }
+
+  &:nth-of-type(4) > span {
+    animation-name: questionAppear4;
+    animation-duration: 8s;
+  }
+}
+
+@keyframes questionAppear1 {
+  0% {
+    @apply text-transparent;
+  }
+  100% {
+    @apply text-white;
+  }
+}
+
+@keyframes questionAppear2 {
+  0% {
+    @apply text-transparent;
+  }
+  25% {
+    @apply text-transparent;
+  }
+  100% {
+    @apply text-white;
+  }
+}
+
+@keyframes questionAppear3 {
+  0% {
+    @apply text-transparent;
+  }
+  50% {
+    @apply text-transparent;
+  }
+  100% {
+    @apply text-white;
+  }
+}
+
+@keyframes questionAppear4 {
+  0% {
+    @apply text-transparent;
+  }
+  75% {
+    @apply text-transparent;
+  }
+  100% {
+    @apply text-white;
   }
 }
